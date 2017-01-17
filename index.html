@@ -12,17 +12,19 @@
 		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
 	</head>
 
-	<body>
+	<body class="cf pa3 mw9 center">
 		
-		<header class="container">
-			<h1>Books</h1>
+		<header class="fl w-100 w-50-l pa3-m pa4-l mb3 mb5-l">
+			<h1 class="lh-title f3 b mt0">Books</h1>
 		</header>
-		
-		<div id="filters" class="">
-			<input id="toolSearch" type="search" placeholder="Search"></input>
-			<span class="">Clear</span>
-			<span id="showAvailable" class="">Show Available</span>
-		</div>
+
+		<section class="fl w-100">
+			<div id="filters" class="">
+				<input id="toolSearch" type="search" placeholder="Search"></input>
+				<span class="">Clear</span>
+				<span id="showAvailable" class="">Show Available</span>
+			</div>
+		</section>
 		
 		<div id="tools" class="">
 			<span class="flash animated">LOADING...</span>
@@ -30,24 +32,26 @@
 
 		<script id="tools" type="text/html">
 			{{#rows}}
-			<div id="{{rowNumber}}" class="br2 ba dark-gray b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
-				<img src="{{cover}}" class="db w-100 br2 br--top">
-				<div class="pa2 ph3-ns pb3-ns">
-					<div class="dt w-100 mt1">
-						<div class="dtc">
-							<h1 class="f5 mv0">{{title}}</h1>
+			<section class="fl w-100">
+				<div id="{{rowNumber}}" class="fl w-100 w-50-m w-25-l pa3-m pa4-l">
+					<img src="{{cover}}" class="db w-100 br2 br--top">
+					<div class="pa2 ph3-ns pb3-ns">
+						<div class="dt w-100 mt1">
+							<div class="dtc">
+								<h1 class="f5 mv0">{{title}}</h1>
+							</div>
+							<div class="dtc tr">
+								<h2 class="f5 mv0"><a href="{{link}}" class="link blue">{{author}}</a></h2>
+							</div>
 						</div>
-						<div class="dtc tr">
-							<h2 class="f5 mv0"><a href="{{link}}" class="link blue">{{author}}</a></h2>
-						</div>
-					</div>
-					{{#summary}}
-					<p class="f6 lh-copy measure mt2 mid-gray">
-					{{summary}}
-					</p>
-					{{/summary}}
-  			</div>
-			</div>
+						{{#summary}}
+						<p class="f6 lh-copy measure mt2 mid-gray">
+						{{summary}}
+						</p>
+						{{/summary}}
+	  			</div>
+				</div>
+			</section>
 			{{/rows}}
 		</script>
 
