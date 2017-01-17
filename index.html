@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 	<html lang="en">
+	
+	<head>
 		<title>Books</title>
 		<meta charset='utf-8'>
 		<script type="text/javascript" src="js/ICanHaz.js"></script>
 		<script type="text/javascript" src='js/jquery.js'></script>
 		<script type="text/javascript" src='js/site.js'></script>
 		<script type="text/javascript" src='js/tabletop1.3.4.js'></script>
-		<link rel="shortcut icon" href="https://raw.githubusercontent.com/jlord/lending-library/gh-pages/favico.png"/>
-		<!--<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600,700,900' rel='stylesheet' type='text/css'>-->
-		<link media="screen" rel="stylesheet" type="text/css" href="css/site.css">
+		<link rel="shortcut icon" href=""/>
+		<link rel="stylesheet" href="https://unpkg.com/tachyons@4.6.1/css/tachyons.min.css"/>
 	</head>
+
 	<body>
+		
 		<header class="container">
 			<h1>Books</h1>
 		</header>
-		<div id="filters" class="container">
-			<input id="toolSearch" type="search" placeholder="hammer.."></input>
-			<span class="clear sml-button">Clear</span>
-			<span id="showAvailable" class="sml-button">Show Available</span>
+		
+		<div id="filters" class="">
+			<input id="toolSearch" type="search" placeholder="Search"></input>
+			<span class="">Clear</span>
+			<span id="showAvailable" class="">Show Available</span>
 		</div>
-		<div id="tools" class="container"><span class="flash animated">LOADING...</span></div>
+		
+		<div id="tools" class="">
+			<span class="flash animated">LOADING...</span>
+		</div>
 
 		<script id="tools" type="text/html">
-		{{#rows}}
-		<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
-			<span class="tool-box-tool">{{title}}</span>
-			<div class="tool-box-bottom {{rowNumber}}">				
-				<ul>
-					<li><small>INFO</small></li>
-					<li><a href="mailto:{{link}}">{{author}}</a></li>
-					<img src="{{cover}}">
-					{{#summary}}
-					<li><small>NOTES : </small>{{summary}}</li>
-					{{/summary}}
-				</ul>
+			{{#rows}}
+			<div id="{{rowNumber}}" class="tool-box {{#checkedout}}not-{{/checkedout}}available">
+				<img src="{{cover}}">
+				<span class="">{{title}}</span>
+				<div class="tool-box-bottom {{rowNumber}}">				
+					<ul>
+						<li><small>Info</small></li>
+						<li>>{{author}}</li>
+						<li><a href="{{link}}">Source</a></li>
+						{{#summary}}
+							<li><small>Summary : </small>{{summary}}</li>
+						{{/summary}}
+					</ul>
+				</div>
 			</div>
-		</div>
-		{{/rows}}
+			{{/rows}}
 		</script>
 
 		<script type="text/javascript">
@@ -45,5 +53,7 @@
 	      Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
 	    })
 		</script>
+		
 	</body>
+	
 </html>
