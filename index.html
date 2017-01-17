@@ -19,6 +19,7 @@
 					<section class="center w-90 w-70-ns mw8 mt4 mh4 mv5-ns f6 f3-ns">
 		
 						<p class="lh-copy ph2">Books</p>
+						
 							<script id="tools" type="text/html">
 								<section class="fl w-100">
 								{{#rows}}
@@ -43,16 +44,17 @@
 								{{/rows}}
 								</section>			
 							</script>
+						
+							<script type="text/javascript">
+							document.addEventListener('DOMContentLoaded', function() {
+							var URL = "1AuNTARRo_ELBjIDZukJUZWp2RYkEqeyWgM69fVZIF_Y"
+							Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
+							})
+							</script>	
+						
 					</section>
 				</div>
 		</div>
 	</body>
-	
-	<script type="text/javascript">
-	document.addEventListener('DOMContentLoaded', function() {
-	var URL = "1AuNTARRo_ELBjIDZukJUZWp2RYkEqeyWgM69fVZIF_Y"
-	Tabletop.init( { key: URL, callback: drawToolBox, simpleSheet: true } )
-	})
-	</script>	
 	
 </html>
